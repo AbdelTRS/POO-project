@@ -69,6 +69,18 @@
 		echo $user_data['fullname'];
 		
 	}
+
+
+	public function get_username($uid){
+		$GetName = "SELECT uname FROM users WHERE uid = $uid";
+		
+		$resultuname = $this->db->query($GetName) or die($this->db->error);
+		
+		$user_name = $resultuname->fetch_array(MYSQLI_ASSOC);
+		
+		
+	}
+
 	
 	/*** Système de session lors du login et de destroy lors du log out ***/
 	public function get_session(){

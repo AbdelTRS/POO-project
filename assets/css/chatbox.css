@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.chat {
+  background-color: grey;
+  position: fixed;
+  height: 90%;
+  width: 30%;
+  bottom: 0%;
+  right: 2%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.chat .chatbox_button {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.chat .button_icon {
+  display: none;
+}
+.chat .messages {
+  background-color: white;
+  padding: 0 5%;
+  margin: 5%;
+  overflow-y: scroll;
+  height: 75%;
+}
+.chat .messages hr {
+  border: none;
+  text-align: center;
+  border-top: 1px solid black;
+  width: 100%;
+}
+.chat .messages .message {
+  margin: 1% 0;
+}
+.chat .messages .message .date,
+.chat .messages .message .author {
+  font-weight: bold;
+}
+.chat .message:last-of-type hr {
+  display: none;
+}
+.chat .form_chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.chat .form_chat input {
+  width: 90%;
+  padding: 3%;
+}
+.chat .form_chat button {
+  margin: 3% 0;
+}
+
+/*# sourceMappingURL=chatbox.css.map */

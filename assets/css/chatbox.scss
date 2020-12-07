@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.chat {
+    background-color: grey;
+    position: fixed;
+    height: 90%;
+    width: 30%;
+    bottom: 0%;
+    right: 2%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    .chatbox_button {
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .button_icon {
+        display: none;
+    }
+    .messages {
+        background-color: white;
+        padding: 0 5%;
+        margin: 5%;
+        overflow-y: scroll;
+        height: 75%;
+        hr {
+            border: none;
+            text-align: center;
+            border-top: 1px solid black;
+            width: 100%;
+        }
+        .message {
+            margin: 1% 0;
+            .date,
+            .author {
+                font-weight: bold;
+            }
+        }
+    }
+    .message:last-of-type {
+        hr {
+            display: none;
+        }
+    }
+    .form_chat {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        input {
+            width: 90%;
+            padding: 3%;
+        }
+        button {
+            margin: 3% 0;
+        }
+    }
+}
+
+// .chatAlt {
+//     background-color: grey;
+//     position: fixed;
+//     height: 90%;
+//     width: 30%;
+//     bottom: 0%;
+//     right: 2%;
+//     display: flex;
+//     justify-content: flex-end;
+//     flex-direction: column;
+//     .chatbox_buttonAlt {
+//         text-align: center;
+//         color: white;
+//         font-weight: bold;
+//         cursor: pointer;
+//     }
+//     .button_iconAlt {
+//         display: none;
+//     }
+//     .messagesAlt {
+//         background-color: white;
+//         padding: 0 5%;
+//         margin: 5%;
+//         overflow-y: scroll;
+//         height: 75%;
+//         hr {
+//             border: none;
+//             text-align: center;
+//             border-top: 1px solid black;
+//             width: 100%;
+//         }
+//         .message {
+//             margin: 1% 0;
+//             .date,
+//             .author {
+//                 font-weight: bold;
+//             }
+//         }
+//     }
+//     .message:last-of-type {
+//         hr {
+//             display: none;
+//         }
+//     }
+//     .form_chatAlt {
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         flex-direction: column;
+//         input {
+//             width: 90%;
+//             padding: 3%;
+//         }
+//         button {
+//             margin: 3% 0;
+//         }
+//     }
+// }
+
+// .chat {
+//     background-color: grey;
+//     position: fixed;
+//     height: initial;
+//     width: initial;
+//     bottom: 0%;
+//     right: 2%;
+//     display: block;
+//     .chatbox_button {
+//         display: none;
+//     }
+//     .button_icon {
+//         display: block;
+//         width: 10%;
+//     }
+//     .messages {
+//         display: none;
+
+//     }
+//     .form_chat {
+//         display: none;
+//     }
+// }
