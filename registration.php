@@ -1,11 +1,8 @@
 <?php 
+session_start();
 include_once 'include/class.user.php';
 $user = new User();
-// Verification si l'user est connecté ou non
-    if ($user->get_session())
-    {
-       header("location:index.php");
-    }
+
 if (isset($_POST['submit'])){
         extract($_POST);
         $register = $user->reg_user($fullname, $uname, $upass, $uemail);
@@ -17,6 +14,7 @@ if (isset($_POST['submit'])){
             echo "<div style='text-align:center'>Email ou Pseudonyme déjà utilisé</div>";
         }
     }
+    
 ?>
   <!DOCTYPE html>
   <html lang="fr">
