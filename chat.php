@@ -14,6 +14,21 @@ session_start();
         $user->user_logout();
         header("location:login.php");
     }
+
+    $db = new PDO('mysql:host=localhost;dbname=poo_bdd;charset=utf8', 'root', '', [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, 
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    ]);
+    $sql = "SELECT COUNT(*) FROM chat";
+    $res = $db->query($sql);
+    $count = $res->fetchColumn();
+    $word = "0";
+    if (strpos($count, $word) !== false) {
+        $query = $db->prepare('INSERT INTO chat SET chatname = :chatname, content = :content, date_hour = NOW()');
+        $query->execute([
+      "chatname" => "",
+      "content" => "Bienvenue sur le chat ! ~"]);
+    }
 ?>
 	
 <!DOCTYPE html>
@@ -35,12 +50,6 @@ session_start();
 
 <div class="messages">
 
-    <div class="message">
-        <span class="date"></span>
-        <span class="author"></span>
-        <span class="content"></span>
-        <hr>
-    </div>
 </div>
 
 <div class="user_input">

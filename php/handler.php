@@ -46,19 +46,22 @@ function sendMessages()
     // Indiquer à PHP que la variable $db existe en dehors de la fonction
     global $db;
     global $uid;
+
     $GetName = $db->query("SELECT uname FROM users WHERE uid = $uid");
     $jsuname = $GetName->fetchAll();
     $author = $jsuname[0]['uname'];
     $content = $_POST['content'];
-
+    
     if (!array_key_exists('content', $_POST)) {
         echo json_encode(["status" => "error", "message" => "Impossible d'envoyer le message"]);
         return;
     }
+
     $query = $db->prepare('INSERT INTO chat SET chatname = :chatname, content = :content, date_hour = NOW()');
     $query->execute([
       "chatname" => $author,
       "content" => $content
     ]);
 }
+
 

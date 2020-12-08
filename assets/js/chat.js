@@ -28,7 +28,7 @@ function getMessages(){
     event.preventDefault();
 
     const author = document.querySelector('.author');
-    const content = document.querySelector('.content');
+    // const content = document.querySelector('.content');
 
     const data = new FormData();
     data.append('author', author.value);
