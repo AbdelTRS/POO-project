@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
 	        // Erreur
 	        echo "<div style='text-align:center'>Pseudo ou mot de passe incorrects</div>";
 	    }
-	}
+  }
 ?>
   <!DOCTYPE html>
   <html lang="fr">

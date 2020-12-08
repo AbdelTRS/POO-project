@@ -59,45 +59,59 @@
 
 	}
 	
-	
+	/**
+	 *  Réccupérer dans la bdd les informations
+	 */
 	public function get_fullname($uid){
 		$query = "SELECT fullname FROM users WHERE uid = $uid";
 		
 		$result = $this->db->query($query) or die($this->db->error);
 		
 		$user_data = $result->fetch_array(MYSQLI_ASSOC);
-		echo $user_data['fullname'];
-		
+		echo $user_data['fullname'];	
 	}
 
+	public function get_email($uid){
+		$query = "SELECT uemail FROM users WHERE uid = $uid";
+		
+		$result = $this->db->query($query) or die($this->db->error);
+		
+		$user_data = $result->fetch_array(MYSQLI_ASSOC);
+		echo $user_data['uemail'];	
+	}
 
 	public function get_username($uid){
-		$GetName = "SELECT uname FROM users WHERE uid = $uid";
+		$query = "SELECT uname FROM users WHERE uid = $uid";
 		
-		$resultuname = $this->db->query($GetName) or die($this->db->error);
+		$result = $this->db->query($query) or die($this->db->error);
 		
-		$user_name = $resultuname->fetch_array(MYSQLI_ASSOC);
-		
-		
+		$user_data = $result->fetch_array(MYSQLI_ASSOC);
+		echo $user_data['uname'];	
 	}
 
+	public function get_id($uid){
+		$query = "SELECT uid FROM users WHERE uid = $uid";
+		
+		$result = $this->db->query($query) or die($this->db->error);
+		
+		$user_data = $result->fetch_array(MYSQLI_ASSOC);
+		echo $user_data['uname'];	
+	}
 	
-	/*** Système de session lors du login et de destroy lors du log out ***/
+	/**
+	 * Système de session lors du login et de destroy lors du log out 
+	*/
+
+
 	public function get_session(){
 	    return $_SESSION['login'];
-	    }
+	}
 
 	public function user_logout() {
 	    $_SESSION['login'] = FALSE;
 		unset($_SESSION);
 	    session_destroy();
 	    }
-	
-	
-	
-	
-	
-	
 	
 	
 	
