@@ -20,32 +20,92 @@ session_start();
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, 
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
+
+    $getdb = $db->query('SELECT * FROM quiz');
+    $getstringdb = $getdb->fetchAll();
+
 ?>
-	
+
+
+
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/quiz.css">
-    <title>Sondage</title>
+	<title>Devoir JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/chatbox.css">
 </head>
 <body>
-    
-<section id="quiz">
+	<!-- Fenêtre popup -->
+	<!-- <div class="popup">
+		<div class="window">
+			<input type="text" id="userInput">
+			<button onclick="closePopup()" class="btn">Se connecter</button>
+		</div>
+	</div> -->
 
-<?php 
-global $db;
-$GetName = ("SELECT quizname FROM quiz WHERE id=21");
-$nameofSurv = $db->query($GetName);
-$test = $nameofSurv->fetchAll();
-print_r($test);
 
-?>
+	<!-- QuizBox d'accueil -->
+	<div class="home-box custom-box">
+		<h3>Quizz</h3>
+		<p>Cliquez pour commencer</p>
+		<button type="button" class="btn" onclick="startQuiz()">Lancer le quiz</button>
+	</div>
 
-</section>
+	<!-- QuizBox questions -->
+	<div class="quiz-box custom-box hide">
+		<div class="question-number">
 
-<script type="text/javascript" src="assets/js/jquery-3.5.1.min.js"></script>
-<script type="text/javascript" src="assets/js/quiz.js"></script>
+		</div>
+		<div class="question-text">
+
+		</div>
+		<div class="option-container">
+
+		</div>
+		<div class="next-question-btn">
+			<button type="button" class="btn" onclick="next()">Next</button>
+		</div>
+		<div class="answers-indicator">
+
+		</div>
+	</div>
+
+	<!-- QuizBox résultats -->
+	<div class="result-box custom-box hide">
+		<h1 class="title-result"></h1>
+		<table>
+			<tr>
+				<td>Merci d'avoir participé</td>
+				<td><span class="total-correct"></span></td>
+			</tr>
+			<tr>
+				<td>Votre réponse à bien été reçue</td>
+				<td><span class="percentage"></span></td>
+			</tr>
+			<tr>
+				<td>Nombre total de personne ayant participé :</td>
+				<td><span class="total-score">32</span></td>
+			</tr>
+		</table>
+		<button type="button" class="btn" onclick="tryAgainQuiz()">Recommencer</button>
+		<button type="button" class="btn" onclick="goToHome()">Accueil</button>
+	</div>
+
+<script>
+    var getphptitle = '<?php echo($getstringdb[0]['quizname']); ?>'
+    var getphp1 = '<?php echo($getstringdb[0]['rep1']); ?>';
+    var getphp2 = '<?php echo($getstringdb[0]['rep2']); ?>';
+    var getphp3 = '<?php echo($getstringdb[0]['rep3']); ?>';
+    var getphp4 = '<?php echo($getstringdb[0]['rep4']); ?>';
+</script>
+
+<script src="assets/js/question.js"></script>
+<script src="assets/js/app.js"></script>
+<?php include 'chat.php';?>
 </body>
 </html>
+
+
