@@ -34,9 +34,7 @@ session_start();
       </div>
       <div id="main-body">
         <br/>
-        <br/>
-        <br/>
-        <br/>
+        <?php include 'php/menu.php' ?>
         <h1>
           Bienvenue dans l'accueil du site <?php $user->get_fullname($uid); ?>
     		</h1>

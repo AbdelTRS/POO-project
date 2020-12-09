@@ -38,13 +38,6 @@ session_start();
     <link rel="stylesheet" href="assets/css/chatbox.css">
 </head>
 <body>
-	<!-- Fenêtre popup -->
-	<!-- <div class="popup">
-		<div class="window">
-			<input type="text" id="userInput">
-			<button onclick="closePopup()" class="btn">Se connecter</button>
-		</div>
-	</div> -->
 
 
 	<!-- QuizBox d'accueil -->

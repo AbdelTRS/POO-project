@@ -62,7 +62,7 @@ function sendMessages()
         "rep6" => $rep6]);
 
         echo "<h1 align='center'>Votre sondage a été créer</h1>";
-        echo "<a href='../index.php' class='btn' style='display:block;margin:auto;'>Retour a l'index</a>";
+        echo "<a href='../quizgame.php' class='btn' style='display:block;margin:auto;'>Tester le sondage !</a>";
 
 }
 
