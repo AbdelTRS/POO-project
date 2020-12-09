@@ -14,6 +14,7 @@
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+  font-family: "Poppins", sans-serif;
 }
 .chat .chatbox_button {
   text-align: center;
@@ -43,6 +44,10 @@
 .chat .messages .message .date,
 .chat .messages .message .author {
   font-weight: bold;
+  font-size: 1em;
+}
+.chat .messages .message .content {
+  font-size: 0.9em;
 }
 .chat .message:last-of-type hr {
   display: none;
