@@ -46,7 +46,7 @@ function sendMessages()
     // Indiquer à PHP que la variable $db existe en dehors de la fonction
     global $db;
     global $uid;
-
+    
     $GetName = $db->query("SELECT uname FROM users WHERE uid = $uid");
     $jsuname = $GetName->fetchAll();
     $author = $jsuname[0]['uname'];
