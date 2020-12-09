@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 07 déc. 2020 à 22:00
+-- Généré le : mer. 09 déc. 2020 à 22:13
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.19
 
@@ -34,22 +34,44 @@ CREATE TABLE `chat` (
   `date_hour` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Déchargement des données de la table `chat`
+-- Structure de la table `friends`
 --
 
-INSERT INTO `chat` (`ID`, `chatname`, `content`, `date_hour`) VALUES
-(1, 'Yanndcl', 'gfdgfdg', '2020-12-07 22:37:00'),
-(2, 'Yanndcl', 'undefined', '2020-12-07 22:37:11'),
-(3, 'Yanndcl', 'undefined', '2020-12-07 22:37:13'),
-(4, 'Yanndcl', 'undefined', '2020-12-07 22:37:14'),
-(5, 'Yanndcl', 'undefined', '2020-12-07 22:37:15'),
-(6, 'Yanndcl', 'undefined', '2020-12-07 22:37:15'),
-(7, 'Yanndcl', 'undefined', '2020-12-07 22:37:36'),
-(8, 'Yanndcl', 'undefined', '2020-12-07 22:37:37'),
-(9, 'Yanndcl', 'undefined', '2020-12-07 22:37:37'),
-(10, 'Yanndcl', 'undefined', '2020-12-07 22:37:37'),
-(11, 'Yanndcl', 'undefined', '2020-12-07 22:37:39');
+CREATE TABLE `friends` (
+  `id` int(11) NOT NULL,
+  `user_one` int(11) NOT NULL,
+  `user_two` int(11) NOT NULL,
+  `friendship_official` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `friends`
+--
+
+INSERT INTO `friends` (`id`, `user_one`, `user_two`, `friendship_official`) VALUES
+(1, 1, 2, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `quiz`
+--
+
+CREATE TABLE `quiz` (
+  `id` int(11) NOT NULL,
+  `quizname` text NOT NULL,
+  `quizdescription` text NOT NULL,
+  `question` text NOT NULL,
+  `rep1` text NOT NULL,
+  `rep2` text NOT NULL,
+  `rep3` text NOT NULL,
+  `rep4` text NOT NULL,
+  `rep5` text NOT NULL,
+  `rep6` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -70,8 +92,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`uid`, `uname`, `upass`, `fullname`, `uemail`) VALUES
-(3, 'Lusy', '279dded4f6286b3f3366a5abc1ac7fe9', 'Yann Decelle', 'Yornnir@outlook.com'),
-(4, 'Yanndcl', '05d3bc0b72817a23459b9fcd4a6b1461', 'Yann Decelle', 'Yornnir@gmail.com');
+(7, 'root', '81dc9bdb52d04dc20036dbd8313ed055', 'Admin', 'test@testmail.com');
 
 --
 -- Index pour les tables déchargées
@@ -82,6 +103,18 @@ INSERT INTO `users` (`uid`, `uname`, `upass`, `fullname`, `uemail`) VALUES
 --
 ALTER TABLE `chat`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- Index pour la table `friends`
+--
+ALTER TABLE `friends`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `quiz`
+--
+ALTER TABLE `quiz`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `users`
@@ -97,13 +130,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT pour la table `friends`
+--
+ALTER TABLE `friends`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `quiz`
+--
+ALTER TABLE `quiz`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

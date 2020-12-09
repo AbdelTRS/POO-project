@@ -1,0 +1,11 @@
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+form div input {
+  margin-bottom: 15%;
+}
+
+/*# sourceMappingURL=quiz.css.map */
