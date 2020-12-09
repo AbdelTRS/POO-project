@@ -19,7 +19,7 @@
         header("location:login.php");
     }
 
-    $db = new DB_con(); 
+    $db = new DB_con();
     $db = $db->ret_obj();
 
     $query = $db->prepare("SELECT * FROM users");

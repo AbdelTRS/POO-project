@@ -16,7 +16,7 @@
 
                     case 'alreadyFriends': 
                         $query = $db->prepare("SELECT * FROM friends WHERE user_one='".$user_one."' AND user_two='".$user_two."' AND friendship_officiel='1' OR user_one='".$user_two."' AND user_two='".$user_one."' AND friendship_officiel='1'");
-                        $query->execute();
+                        $query->execute(); 
 
                         return $query->rowCount();
                         break;
